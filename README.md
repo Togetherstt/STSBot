@@ -2,7 +2,7 @@
 
 独立的《杀戮尖塔 2》猜卡机器人项目，基于 `NoneBot2 + OneBot V11 + NapCatQQ`。
 
-这个仓库从更大的私有机器人项目中拆分而来，只保留《杀戮尖塔 2》猜卡玩法所需的最小代码、数据和测试，方便单独维护与开源。
+这个仓库从[更大的机器人项目](https://github.com/Togetherstt/nailoong-bot)中拆分而来，只保留《杀戮尖塔 2》猜卡玩法所需的最小代码、数据和测试，方便单独维护与开源。
 
 ## 功能概览
 
@@ -116,14 +116,3 @@ python scripts/test_sts_card_guess_local.py --card 暴走
 ## 开源边界
 
 本仓库只包含《杀戮尖塔 2》猜卡功能本身，不包含原机器人项目中的其它插件、私有配置或运行数据。
-
-## GitHub 发布建议
-
-如果你准备推到 GitHub，常用流程如下：
-
-```powershell
-git remote add origin <你的仓库地址>
-git add .
-git commit -m "Initial standalone STSBot release"
-git push -u origin main
-```
