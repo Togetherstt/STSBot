@@ -116,3 +116,7 @@ python scripts/test_sts_card_guess_local.py --card 暴走
 ## 开源边界
 
 本仓库只包含《杀戮尖塔 2》猜卡功能本身，不包含原机器人项目中的其它插件、私有配置或运行数据。
+
+## License
+
+本项目使用 [MIT License](https://github.com/Togetherstt/STSBot/edit/main/LICENSE)
