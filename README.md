@@ -1,6 +1,10 @@
 # STSBot
 
-基于 `NoneBot2 + OneBot V11 + NapCatQQ` 的独立《杀戮尖塔 2》猜卡机器人项目，可单独作为 GitHub 仓库开源。
+独立的《杀戮尖塔 2》猜卡机器人项目，基于 `NoneBot2 + OneBot V11 + NapCatQQ`。
+
+这个仓库从更大的私有机器人项目中拆分而来，只保留《杀戮尖塔 2》猜卡玩法所需的最小代码、数据和测试，方便单独维护与开源。
+
+## 功能概览
 
 当前支持的命令：
 
@@ -10,6 +14,13 @@
 - `@机器人 /猜卡测试 <卡牌名或ID>`
 - `/猜卡 help`
 - `python scripts/test_sts_card_guess_local.py --card 暴走`
+
+玩法规则摘要：
+
+- 开局随机给出 3 条基础提示
+- 10 秒后补齐第 4 条基础提示
+- 之后每 60 秒揭示一部分卡牌描述
+- 同一群同一时间只允许进行一局
 
 ## 项目结构
 
@@ -35,6 +46,7 @@ STSBot/
 ## 环境要求
 
 - `Python 3.10+`
+- 推荐配合 `NapCatQQ + OneBot V11 正向 WebSocket`
 
 安装依赖：
 
@@ -63,6 +75,13 @@ STS_CARD_DATA_DIR=data/sts_card_guess/cards
 - `ONEBOT_ACCESS_TOKEN`：需与 NapCatQQ Access Token 一致
 - `ADMIN_QQ`：允许使用 `/猜卡测试` 的管理员 QQ 号
 - `STS_CARD_DATA_DIR`：卡牌 JSON 目录，默认使用仓库内置卡池
+
+## 接入 NapCatQQ
+
+在 NapCatQQ 中启用 `OneBot V11` 的正向 WebSocket，并确保以下配置与 `.env` 一致：
+
+- 地址：`127.0.0.1:8080`
+- Access Token：与你的 `ONEBOT_ACCESS_TOKEN` 一致
 
 ## 启动
 
@@ -93,6 +112,10 @@ python scripts/test_sts_card_guess_local.py --card 暴走
 ## 数据说明
 
 仓库内置了一份 `STS2` 卡牌 JSON 数据，位于 `data/sts_card_guess/cards/`。该目录直接从原项目复制而来，仅作为猜卡玩法的数据源。
+
+## 开源边界
+
+本仓库只包含《杀戮尖塔 2》猜卡功能本身，不包含原机器人项目中的其它插件、私有配置或运行数据。
 
 ## GitHub 发布建议
 
